@@ -1,0 +1,89 @@
+#include <iostream>
+using namespace std;
+
+class student{
+    string name;
+    public:
+    
+    int age;
+    bool gender;
+    
+    student(student &a){                    //Copy constructor
+        cout<<"Copy constructor"<<endl;
+        name = a.name;
+        age = a.age;
+        gender = a.gender;
+        
+    }
+    
+    student(){
+        cout<<"default constructor"<<endl;          //default constructor
+    }
+    
+    student(string s, int a, int g){            //Paramitirised constructor
+        cout<<"Paramitirised constructor"<<endl;
+        name = s;
+        age =  a;
+        gender = g;
+    }
+    
+    
+    void getname(){                         //get method
+       cout<<name<<endl;
+       cout<<age<<endl;
+       cout<<gender<<endl;
+    }
+    
+    void printInfo(){                       //print method
+        std::cout << "Your name pls:";
+      cout<<name<<endl;
+        cout<<"age:";
+        cout<<age<<endl;
+        cout<<"gender:";
+        cout<<gender<<endl;
+        
+        }
+    bool operator == (student &a){              //operator overloading
+        if(name == a.name && age ==a.age && gender == a.gender){
+            return true;
+        }
+        return false;    
+    }    
+        
+        
+        
+    ~student(){                                 //Destructor
+        cout<<"Destructor"<<endl;
+    }
+    
+};
+
+int main() {
+    //student arr[3];
+    //for(int i =0; i<3; i++){
+    //    std::cout << "Your name pls:"<<endl;
+    //    std::cin >> arr[i].name;
+    //    cout<<"age:"<<endl;
+    //    cin>>arr[i].age;
+    //    cout<<"gender:"<<endl;
+    //    std::cin >>arr[i].gender;
+        
+    // }
+	
+	 //for(int i =0; i<3; i++){
+	  //   arr[i].printInfo();
+	 // }
+	    
+	student a("SHohaib", 25,1);
+//	a.printInfo();
+	student b("sohel",26,1);
+	student c = a;
+	
+	if(b==a){                           //operator overloading
+	    cout<<"Same"<<endl;
+	}
+	else{
+	cout<<"Not-same"<<endl;
+	}
+	return 0;
+}
