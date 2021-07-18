@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+class A{
+    public:
+    int a;
+    void funcA(){
+        std::cout << "funcA" << std::endl;
+    }
+    private:
+    int b;
+    void funcB(){
+        cout<<"funcB"<<endl;
+    }
+    protected:
+    int c;
+    void funcC(){
+        cout<<"FuncC"<<endl;
+    }
+};
+
+int main() {
+    A obj;
+    obj.funcA();
+    //obj.funcB();
+    //obj.funcC();
+	return 0;
+}
